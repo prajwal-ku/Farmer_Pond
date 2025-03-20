@@ -27,7 +27,7 @@ function Navbar() {
     <motion.nav
       className="navbar navbar-expand-lg fixed-top"
       style={{
-        backgroundColor: "#B2F2B2", // Lighter shade of green
+        backgroundColor: "#F4E38A", // Lighter shade of gold
         height: "80px",
       }}
       animate={{ y: showNavbar ? 0 : -100 }}
@@ -38,14 +38,14 @@ function Navbar() {
         {/* Logo shifted to the left */}
         <Link className="navbar-brand d-flex align-items-center" to="/" style={{ marginLeft: "20px" }}>
           <img 
-            src="/logo.jpg" 
+            src="/AgriSure.png" 
             alt="Logo" 
             width="160" 
             height="140" 
             className="me-2"
             style={{ objectFit: "contain" }}
           />
-          <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Smart Water Monitoring</span>
+          <span style={{ fontSize: "1.5rem", color: "#0B3D02", fontWeight: "bold", marginLeft: "20px"}}>Smart Water Monitoring for Your Farm-Pond!</span>
         </Link>
 
         {/* Navbar Toggler for Mobile View */}
@@ -69,12 +69,12 @@ function Navbar() {
               to="/" 
               style={{ 
                 transition: "0.3s",
-                backgroundColor: "#28a745",
-                color: "black",
+                backgroundColor: "#0B3D02",
+                color: "white",
                 border: "1px solid black",
               }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = "#00ff7f"}
-              onMouseLeave={(e) => e.target.style.backgroundColor = "#28a745"}
+              onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+              onMouseLeave={(e) => e.target.style.backgroundColor = "#0B3D02"}
             >
               Home
             </Link>
@@ -83,30 +83,16 @@ function Navbar() {
               to="/about" 
               style={{ 
                 transition: "0.3s",
-                backgroundColor: "#28a745",
-                color: "black",
+                backgroundColor: "#0B3D02",
+                color: "white",
                 border: "1px solid black",
               }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = "#00ff7f"}
-              onMouseLeave={(e) => e.target.style.backgroundColor = "#28a745"}
+              onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+              onMouseLeave={(e) => e.target.style.backgroundColor = "#0B3D02"}
             >
               About Us
             </Link>
-            <Link 
-              className="btn" 
-              to="/contact" 
-              style={{ 
-                transition: "0.3s",
-                backgroundColor: "#28a745",
-                color: "black",
-                border: "1px solid black",
-              }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = "#00ff7f"}
-              onMouseLeave={(e) => e.target.style.backgroundColor = "#28a745"}
-            >
-              Contact Us
-            </Link>
-
+            
             {/* Dropdown for Login / Register */}
             <div className="dropdown">
               <button 
@@ -115,12 +101,12 @@ function Navbar() {
                 onClick={() => setIsOpen(!isOpen)}
                 style={{ 
                   transition: "0.3s",
-                  backgroundColor: "#28a745",
-                  color: "black",
-                  border: "1px solid black",
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = "#00ff7f"}
-                onMouseLeave={(e) => e.target.style.backgroundColor = "#28a745"}
+                  backgroundColor: "#0B3D02",
+                color: "white",
+                border: "1px solid black",
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+              onMouseLeave={(e) => e.target.style.backgroundColor = "#0B3D02"}
               >
                 Login / Register
               </button>
@@ -131,7 +117,7 @@ function Navbar() {
                     to="/login" 
                     onClick={closeDropdown}
                     style={{ transition: "0.3s", color: "black" }}
-                    onMouseEnter={(e) => e.target.style.backgroundColor = "#00ff7f"}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
                     onMouseLeave={(e) => e.target.style.backgroundColor = "white"}
                   >
                     Login
@@ -143,7 +129,7 @@ function Navbar() {
                     to="/register" 
                     onClick={closeDropdown}
                     style={{ transition: "0.3s", color: "black" }}
-                    onMouseEnter={(e) => e.target.style.backgroundColor = "#00ff7f"}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
                     onMouseLeave={(e) => e.target.style.backgroundColor = "white"}
                   >
                     Register

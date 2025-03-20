@@ -8,6 +8,8 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Dashboard from "./Components/Dashboard";
 import Footer from "./Components/Footer";
+import Chatbot from "./Components/Chatbot";
+import Chat from './Components/Chat';
 
 function Layout() {
   const location = useLocation();
@@ -30,6 +32,7 @@ function Layout() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/chat" element={<Chat />} />
         </Routes>
       </div>
       {shouldShowFooter && <Footer />} {/* Footer hidden on Dashboard, Login, and Register */}
@@ -41,6 +44,9 @@ function App() {
   return (
     <Router>
       <Layout />
+      <div className="container mt-4">
+        <Chatbot /> {/* ✅ Chatbot Integrated */}
+      </div>
     </Router>
   );
 }
