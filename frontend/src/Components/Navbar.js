@@ -88,27 +88,6 @@ function Navbar() {
             </Link>
             <Link 
               className="btn" 
-              to="/about" 
-              style={{ 
-                transition: "0.3s",
-                backgroundColor: "white",
-                color: "#004aad",
-                border: "1px solid #004aad",
-                fontWeight: "bold",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "#007bff";
-                e.target.style.color = "white";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "white";
-                e.target.style.color = "#004aad";
-              }}
-            >
-              About Us
-            </Link>
-            <Link 
-              className="btn" 
               to="/contact" 
               style={{ 
                 transition: "0.3s",

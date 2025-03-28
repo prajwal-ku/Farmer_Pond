@@ -1,38 +1,51 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from "./Components/Navbar";
+import DashboardNavbar from "./Components/DashboardNavbar";
 import Home from "./Components/Home";
-import About from "./Components/About";
 import ContactUs from "./Components/ContactUs";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
-import Dashboard from "./Components/Dashboard";
+import AdminLogin from "./Components/AdminLogin";
+import DoctorLogin from "./Components/DoctorLogin";
+import PatientLogin from "./Components/PatientLogin";
+import AdminRegister from "./Components/AdminRegister";
+import DoctorRegister from "./Components/DoctorRegister";
+import PatientRegister from "./Components/PatientRegister";
+import AdminDashboard from "./Components/AdminDashboard";
+import DoctorDashboard from "./Components/DoctorDashboard";
+import PatientDashboard from "./Components/PatientDashboard";
 import Footer from "./Components/Footer";
 
 function Layout() {
   const location = useLocation();
 
-  // Hide Navbar only on the Dashboard page
-  const hideNavbar = location.pathname === "/dashboard";
-
-  // Hide Footer on Dashboard, Login, and Register pages
-  const hideFooterOn = ["/dashboard", "/login", "/register"];
-  const shouldShowFooter = !hideFooterOn.includes(location.pathname);
+  const dashboardRoutes = [
+    "/admin-dashboard", "/doctor-dashboard", "/patient-dashboard"
+  ];
+  const isDashboard = dashboardRoutes.includes(location.pathname);
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {!hideNavbar && <Navbar />} {/* Navbar visible on all pages except Dashboard */}
+      {isDashboard ? <DashboardNavbar /> : <Navbar />}
       <div className="flex-grow-1">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+
+          {/* Authentication Routes */}
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/doctor-login" element={<DoctorLogin />} />
+          <Route path="/patient-login" element={<PatientLogin />} />
+          <Route path="/admin-register" element={<AdminRegister />} />
+          <Route path="/doctor-register" element={<DoctorRegister />} />
+          <Route path="/patient-register" element={<PatientRegister />} />
+
+          {/* Dashboard Routes */}
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+          <Route path="/patient-dashboard" element={<PatientDashboard />} />
         </Routes>
       </div>
-      {shouldShowFooter && <Footer />} {/* Footer hidden on Dashboard, Login, and Register */}
+      {!isDashboard && <Footer />}
     </div>
   );
 }

@@ -1,96 +1,45 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import "./Home.css"; // Ensure you have styles for better UI
 
-const images = ["/doctor1.jpg", "/doctor2.jpg", "/hospital.jpg", "/consultation.jpg"];
-
-function Home() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
+const Home = () => {
+  const navigate = useNavigate(); // React Router hook for navigation
+  const [searchText, setSearchText] = useState("");
+  const handleInputChange = (e) => {
+    console.log("Typing:", e.target.value); // Debugging output
+    setSearchText(e.target.value);
+  };
 
   return (
-    <div
-      style={{
-        height: "90vh",
-        width: "100vw",
-        overflow: "hidden",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "relative",
-      }}
-    >
-      {/* Background Image with Smooth Fade Transition */}
-      <AnimatePresence>
-        <motion.div
-          key={index}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundImage: `url(${images[index]})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            filter: "brightness(75%)",
-          }}
-        />
-      </AnimatePresence>
+    <div className="home-container">
+      {/* Search Bar */}
+      <div className="search-container">
+        <input type="text" placeholder="Search doctors, clinics, hospitals, etc."  value={searchText}
+        onChange={handleInputChange}/>
+        <button>🔍</button>
+      </div>
 
-      {/* Content Box */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          padding: "2rem 3rem",
-          borderRadius: "15px",
-          color: "white",
-          textAlign: "center",
-          maxWidth: "90%",
-          width: "800px",
-          margin: "20px",
-          position: "relative",
-          zIndex: 2,
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
-            fontWeight: "bold",
-            margin: "0 0 1rem 0",
-            lineHeight: 1.3,
-          }}
-        >
-          Welcome to Smart Doctor-Patient Consultation
-        </h1>
+      {/* Service Cards */}
+      <div className="services">
+        <div className="service-card" onClick={() => navigate("/ai-symptoms")}>
+          <img src="patient.png" alt="Find symptoms" />
+          <h3>Know about your symptoms</h3>
+        </div>
 
-        <p
-          style={{
-            fontSize: "clamp(1rem, 2vw, 1.2rem)",
-            margin: 0,
-            lineHeight: 1.6,
-            color: "white",
-          }}
-        >
-          Connect with specialized doctors, book appointments online, and experience secure healthcare solutions.
-        </p>
-      </motion.div>
+        <div className="service-card" onClick={() => navigate("/appointment")}>
+          <img src="appointment.png" alt="appointment" />
+          <h3>Book an Appointment</h3>
+        </div>
+
+        <div className="service-card" onClick={() => navigate("/find-doctors")}>
+          <img src="doctor.png" alt="Find Doctors" />
+          <h3>Find Doctors Near You</h3>
+        </div>
+      </div>
     </div>
+    
   );
-}
+};
 
 export default Home;

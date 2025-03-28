@@ -1,0 +1,91 @@
+/* Home.css */
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Container styles */
+  .home-container {
+    margin-top: 80px; /* Adjust based on navbar height */
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+ 
+  
+  /* Search bar */
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .search-container input {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    position: relative;
+    pointer-events: auto; /* Ensures it's clickable */
+  }
+  
+  .search-container button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Services section */
+  .services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .service-card {
+    width: 550px;
+    height: 200px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: 80px; /* Keep if you want a fixed height, otherwise remove */
+    object-fit: contain; /* Ensures the image fills the space without distortion */
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
+
+  
+  .service-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .service-card p {
+    color: #666;
+    font-size: 14px;
+  }
