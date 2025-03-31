@@ -27,26 +27,25 @@ function Navbar() {
     <motion.nav
       className="navbar navbar-expand-lg fixed-top"
       style={{
-        backgroundColor: "#004aad", // Professional blue for healthcare
+        backgroundColor: "#F4E38A", // Lighter shade of gold
         height: "80px",
       }}
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ type: "spring", stiffness: 100, damping: 15 }}
     >
       <div className="container-fluid">
+        
         {/* Logo shifted to the left */}
         <Link className="navbar-brand d-flex align-items-center" to="/" style={{ marginLeft: "20px" }}>
           <img 
-            src="/logo.png" 
+            src="/AgriSure.png" 
             alt="Logo" 
-            width="140" 
-            height="60" 
+            width="160" 
+            height="140" 
             className="me-2"
             style={{ objectFit: "contain" }}
           />
-          <span style={{ fontSize: "1.5rem", color: "white", fontWeight: "bold", marginLeft: "15px"}}>
-            Smart Doctor-Patient Consultation
-          </span>
+          <span style={{ fontSize: "1.5rem", color: "#0B3D02", fontWeight: "bold", marginLeft: "20px"}}>Smart Water Monitoring for Your Farm-Pond!</span>
         </Link>
 
         {/* Navbar Toggler for Mobile View */}
@@ -70,40 +69,40 @@ function Navbar() {
               to="/" 
               style={{ 
                 transition: "0.3s",
-                backgroundColor: "white",
-                color: "#004aad",
-                border: "1px solid #004aad",
-                fontWeight: "bold",
+                backgroundColor: "#0B3D02",
+                color: "white",
+                border: "1px solid black",
               }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "#007bff";
-                e.target.style.color = "white";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "white";
-                e.target.style.color = "#004aad";
-              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+              onMouseLeave={(e) => e.target.style.backgroundColor = "#0B3D02"}
             >
               Home
+            </Link>
+            <Link 
+              className="btn" 
+              to="/about" 
+              style={{ 
+                transition: "0.3s",
+                backgroundColor: "#0B3D02",
+                color: "white",
+                border: "1px solid black",
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+              onMouseLeave={(e) => e.target.style.backgroundColor = "#0B3D02"}
+            >
+              About Us
             </Link>
             <Link 
               className="btn" 
               to="/contact" 
               style={{ 
                 transition: "0.3s",
-                backgroundColor: "white",
-                color: "#004aad",
-                border: "1px solid #004aad",
-                fontWeight: "bold",
+                backgroundColor: "#0B3D02",
+                color: "white",
+                border: "1px solid black",
               }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "#007bff";
-                e.target.style.color = "white";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "white";
-                e.target.style.color = "#004aad";
-              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+              onMouseLeave={(e) => e.target.style.backgroundColor = "#0B3D02"}
             >
               Contact Us
             </Link>
@@ -116,19 +115,12 @@ function Navbar() {
                 onClick={() => setIsOpen(!isOpen)}
                 style={{ 
                   transition: "0.3s",
-                  backgroundColor: "white",
-                  color: "#004aad",
-                  border: "1px solid #004aad",
-                  fontWeight: "bold",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = "#007bff";
-                  e.target.style.color = "white";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = "white";
-                  e.target.style.color = "#004aad";
-                }}
+                  backgroundColor: "#0B3D02",
+                color: "white",
+                border: "1px solid black",
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+              onMouseLeave={(e) => e.target.style.backgroundColor = "#0B3D02"}
               >
                 Login / Register
               </button>
@@ -136,55 +128,25 @@ function Navbar() {
                 <li>
                   <Link 
                     className="dropdown-item" 
-                    to="/admin-login" 
+                    to="/login" 
                     onClick={closeDropdown}
-                    style={{ transition: "0.3s", color: "#004aad", fontWeight: "bold" }}
-                    onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = "#007bff";
-                      e.target.style.color = "white";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = "white";
-                      e.target.style.color = "#004aad";
-                    }}
+                    style={{ transition: "0.3s", color: "black" }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = "white"}
                   >
-                    Admin Login
+                    Login
                   </Link>
                 </li>
                 <li>
                   <Link 
                     className="dropdown-item" 
-                    to="/doctor-login" 
+                    to="/register" 
                     onClick={closeDropdown}
-                    style={{ transition: "0.3s", color: "#004aad", fontWeight: "bold" }}
-                    onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = "#007bff";
-                      e.target.style.color = "white";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = "white";
-                      e.target.style.color = "#004aad";
-                    }}
+                    style={{ transition: "0.3s", color: "black" }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = "#146D10"}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = "white"}
                   >
-                    Doctor Login
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    className="dropdown-item" 
-                    to="/patient-login" 
-                    onClick={closeDropdown}
-                    style={{ transition: "0.3s", color: "#004aad", fontWeight: "bold" }}
-                    onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = "#007bff";
-                      e.target.style.color = "white";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = "white";
-                      e.target.style.color = "#004aad";
-                    }}
-                  >
-                    Patient Login
+                    Register
                   </Link>
                 </li>
               </ul>

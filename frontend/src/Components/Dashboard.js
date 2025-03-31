@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { io } from "socket.io-client";
 
-const socket = io("http://192.168.32.187:5000"); // WebSocket connection
+const socket = io("http://192.168.1.7:5000"); // WebSocket connection 
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ function Dashboard() {
   useEffect(() => {
     socket.on("sensorData", (data) => {
       console.log("Received sensor data:", data);
-      if (selectedPond?.id === 476655) {
+      if (selectedPond?.id === 959679) {
         setSensorData({
           pH: data.pH,
           tds: data.tds,
@@ -59,7 +59,7 @@ function Dashboard() {
 
   // Reset sensor data when a different pond is selected
   useEffect(() => {
-    if (selectedPond?.id !== 476655) {
+    if (selectedPond?.id !== 959679) {
       setSensorData({ pH: "--", tds: "--", waterLevel: [] });
     }
   }, [selectedPond]);
@@ -104,7 +104,7 @@ function Dashboard() {
 
   return (
     <div>
-      <div className="d-flex justify-content-between px-4 py-2 bg-dark text-white">
+      <div className="d-flex justify-content-between px-4 py-2" style={{ backgroundColor: "#F4E38A", color: "#0B3D02" }}>
         <h2>Farmer Dashboard</h2>
         <div>
           <button className="btn btn-success me-2" onClick={handleAddPond}>
