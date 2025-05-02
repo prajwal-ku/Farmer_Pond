@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 import { io } from "socket.io-client";
 
-const socket = io("http://192.168.1.7:5000"); // WebSocket connection 
+const socket = io("http://192.168.34.201:5000"); // WebSocket connection 
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ function Dashboard() {
       const storedPonds = JSON.parse(localStorage.getItem(`ponds_${decodedToken.email}`)) || [];
       setPonds(storedPonds);
 
-      // Auto-select pond with ID 476655
+      // pond with ID 476655
       const preselectedPond = storedPonds.find((pond) => pond.id === 476655);
       if (preselectedPond) {
         setSelectedPond(preselectedPond);
@@ -45,7 +45,7 @@ function Dashboard() {
   useEffect(() => {
     socket.on("sensorData", (data) => {
       console.log("Received sensor data:", data);
-      if (selectedPond?.id === 959679) {
+      if (selectedPond?.id === 476655) {
         setSensorData({
           pH: data.pH,
           tds: data.tds,
@@ -59,7 +59,7 @@ function Dashboard() {
 
   // Reset sensor data when a different pond is selected
   useEffect(() => {
-    if (selectedPond?.id !== 959679) {
+    if (selectedPond?.id !== 476655) {
       setSensorData({ pH: "--", tds: "--", waterLevel: [] });
     }
   }, [selectedPond]);

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@botpress/webchat": "^2.3.8",
     "@emailjs/browser": "^4.4.1",
     "@react-google-maps/api": "^2.20.6",
     "@react-oauth/google": "^0.12.1",

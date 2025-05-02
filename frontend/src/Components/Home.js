@@ -83,6 +83,7 @@ function Home() {
             fontSize: "clamp(1rem, 2vw, 1.2rem)",
             margin: 0,
             lineHeight: 1.6,
+            color: "white",
           }}
         >
           Monitor and manage your farm pond water levels, pH, and contamination efficiently.
