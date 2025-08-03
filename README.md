@@ -5,6 +5,7 @@ so our Project is build to check the quality of water with respect to 2 main fac
 pH of Water  &  TDS of water
 
 pH is standardised as 
+
 ![pH+Scale](https://github.com/user-attachments/assets/5e559b9d-f5b2-464b-af23-edfcae265d28)
 
 
