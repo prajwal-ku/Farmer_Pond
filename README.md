@@ -7,6 +7,10 @@ pH is standardised as
 if pH is < 7 then water is Acidic
 if pH is =7 then water is Neutral
 if pH is >7 then water is Alkaline
+pH of Water 
+
+![pH+Scale](https://github.com/user-attachments/assets/5e559b9d-f5b2-464b-af23-edfcae265d28)
+
 
 TDS is standardised as 
 if TDS is around 50 - 100 = water is Good little pollutants
